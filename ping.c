@@ -268,7 +268,7 @@ static void on_recv(int sfd) {
     printf("reply seq=%d ttl=%d time=%.2lfms\n", reply.seq, ttl, time);
 }
 
-const char* VERSION = "0.1.0";
+const char* VERSION = "0.1.1";
 const char* HELP_TEXT =
     "Usage\n"
     "    myping [options] <addr>\n"
