@@ -24,8 +24,8 @@ sudo ./build/linux/x86_64/release/myping 127.0.0.1
 
 ## 维护者
 
-@Vincil Lau(https://github.com/vincillau)
+[@Vincil Lau](https://github.com/vincillau)
 
 ## 许可证
 
-MIT(./LICENSE)
+[MIT](./LICENSE)
