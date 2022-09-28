@@ -268,9 +268,30 @@ static void on_recv(int sfd) {
     printf("reply seq=%d ttl=%d time=%.2lfms\n", reply.seq, ttl, time);
 }
 
+const char* VERSION = "0.0.0";
+const char* HELP_TEXT =
+    "Usage\n"
+    "    myping [options] <addr>\n"
+    "\n"
+    "Options:\n"
+    "    <addr>             ip address\n"
+    "    --version          show version\n"
+    "    --help             show help text\n";
+
 int main(int argc, char** argv) {
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "--help") == 0) {
+            fputs(HELP_TEXT, stderr);
+            exit(EXIT_SUCCESS);
+        }
+        if (strcmp(argv[i], "--version") == 0) {
+            fprintf(stderr, "version %s\n", VERSION);
+            exit(EXIT_SUCCESS);
+        }
+    }
+
     if (argc != 2) {
-        fprintf(stderr, "usage: myping [host]\n");
+        fputs(HELP_TEXT, stderr);
         exit(EXIT_FAILURE);
     }
     const char* ip = argv[1];
